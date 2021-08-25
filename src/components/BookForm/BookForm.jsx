@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../../redux/books/books';
@@ -16,11 +17,14 @@ const BookForm = () => {
     dispatch(addBook(newBook));
   };
 
+  const titleRef = useRef();
+  const authorRef = useRef();
+
   return (
     <div className="book-form">
-      <input type="text" id="book-input-title" placeholder="" />
-      <input type="text" id="book-input-author" placeholder="" />
-      <button type="button" onClick={() => submitBookToStore(document.getElementById('book-input-title').value, document.getElementById('book-input-author').value)}>Add Book</button>
+      <input type="text" ref={titleRef} placeholder="" />
+      <input type="text" ref={authorRef} placeholder="" />
+      <button type="button" onClick={() => submitBookToStore(titleRef.value, authorRef.value)}>Add Book</button>
     </div>
   );
 };
