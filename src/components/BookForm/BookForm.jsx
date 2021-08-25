@@ -1,14 +1,13 @@
-// import useDispatch hook
+import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-// import your Action Creators
 import { addBook } from '../../redux/books/books';
 
-const dispatch = useDispatch();
-
 const BookForm = () => {
-  const submitBookToStore = () => {
+  const dispatch = useDispatch();
+
+  const submitBookToStore = (title, author) => {
     const newBook = {
-      id, // make sure it's unique
+      id: uuidv4(),
       title,
       author,
     };
@@ -17,14 +16,11 @@ const BookForm = () => {
     dispatch(addBook(newBook));
   };
 
-
   return (
     <div className="book-form">
-      <input type="text" className="book-input-name" />
-      <select name="book-categories" className="book-categories">
-        <option value="thriller">Thriller</option>
-      </select>
-      <button type="button" onClick={submitBookToStore}>Add Book</button>
+      <input type="text" id="book-input-title" placeholder="" />
+      <input type="text" id="book-input-author" placeholder="" />
+      <button type="button" onClick={() => submitBookToStore(document.getElementById('book-input-title').value, document.getElementById('book-input-author').value)}>Add Book</button>
     </div>
   );
 };

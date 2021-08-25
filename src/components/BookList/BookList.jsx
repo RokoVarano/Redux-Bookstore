@@ -1,22 +1,21 @@
-import books from '../../Backend/mockObjects';
+import { useSelector } from 'react-redux';
 import Book from '../Book/Book';
 import BookForm from '../BookForm/BookForm';
 
 const BookList = () => {
-  const mockbooks = books.map((book) => (
+  const books = useSelector((state) => state.books);
+
+  const updateBooks = (books) => books.map((book) => (
     <Book
-      category={book.category}
       title={book.title}
       author={book.author}
-      key={book.title}
+      key={book.id}
     />
   ));
 
   return (
-    <div className="books-page">
-      <button type="button" className="add-book-btn">Add Book</button>
-      <button type="button" className="remove-book-btn">Remove Book</button>
-      {mockbooks}
+    <div id="books-page">
+      {updateBooks(books)}
       <BookForm />
     </div>
   );

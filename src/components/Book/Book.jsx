@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
 
 const Book = (props) => {
-  const { category, title, author } = props;
+  const { title, author } = props;
 
   return (
     <div className="book-widget general">
       <ul>
-        <li><p className="book-category">{category}</p></li>
         <li><h2 className="book-title">{title}</h2></li>
         <li><p className="book-author">{author}</p></li>
       </ul>
@@ -24,7 +23,6 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
