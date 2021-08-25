@@ -10,6 +10,7 @@ const BookList = () => {
       title={book.title}
       author={book.author}
       key={book.id}
+      id={book.id}
     />
   ));
 
