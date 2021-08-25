@@ -17,14 +17,14 @@ const BookForm = () => {
     dispatch(addBook(newBook));
   };
 
-  const titleRef = useRef();
-  const authorRef = useRef();
+  const titleRef = useRef('');
+  const authorRef = useRef('');
 
   return (
     <div className="book-form">
       <input type="text" ref={titleRef} placeholder="" />
       <input type="text" ref={authorRef} placeholder="" />
-      <button type="button" onClick={() => submitBookToStore(titleRef.value, authorRef.value)}>Add Book</button>
+      <button type="button" onClick={() => submitBookToStore(titleRef.current.value, authorRef.current.value)}>Add Book</button>
     </div>
   );
 };
