@@ -21,9 +21,12 @@ const BookForm = () => {
 
   return (
     <div className="book-form">
-      <input type="text" ref={titleRef} placeholder="" />
-      <input type="text" ref={categoryRef} placeholder="" />
-      <button type="button" onClick={() => submitBookToStore(titleRef.current.value, categoryRef.current.value)}>Add Book</button>
+      <h3 className="general">Add New Book</h3>
+      <div className="inputs general">
+        <input type="text" ref={titleRef} placeholder="Book Title" className="title-input" />
+        <input type="text" ref={categoryRef} placeholder="Category" className="category-input" />
+        <button type="button" onClick={() => submitBookToStore(titleRef.current.value, categoryRef.current.value)}>Add Book</button>
+      </div>
     </div>
   );
 };
