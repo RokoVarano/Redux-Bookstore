@@ -9,6 +9,7 @@ import BookList from './components/BookList/BookList';
 import Categories from './components/Categories/Categories';
 import Header from './components/Header/Header';
 import createApp from './redux/createapp/createapp';
+import { getBooks } from './redux/books/books';
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function App() {
     if (localStorage.getItem('app_id')) return;
 
     dispatch(createApp(appId));
+    dispatch(getBooks());
   });
 
   return (

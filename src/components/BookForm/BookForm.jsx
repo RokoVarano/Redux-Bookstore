@@ -1,20 +1,20 @@
 import { useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/books';
+import { addBookToAPI } from '../../redux/books/books';
 
 const BookForm = () => {
   const dispatch = useDispatch();
 
-  const submitBookToStore = (title, author) => {
+  const submitBookToStore = (title, author, category = 'Generic') => {
     const newBook = {
       id: uuidv4(),
       title,
       author,
+      category,
     };
 
-    // dispatch an action and pass it the newBook object (your action's payload)
-    dispatch(addBook(newBook));
+    dispatch(addBookToAPI(newBook));
   };
 
   const titleRef = useRef('');
