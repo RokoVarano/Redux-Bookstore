@@ -7,7 +7,7 @@ export const getBooks = () => async (dispatch) => {
   const url = `${www + appId}/books`;
 
   return fetch(url)
-    .then((response) => response.json())
+    .then((response) => response.json().catch(() => ({})))
     .then((json) => {
       const collection = Object.entries(json)
         .reduce((accumulator, object) => accumulator.concat({
