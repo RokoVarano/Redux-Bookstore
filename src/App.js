@@ -13,6 +13,7 @@ import { getBooks } from './redux/books/books';
 
 function App() {
   const dispatch = useDispatch();
+  dispatch(getBooks());
 
   useEffect(() => {
     const appId = localStorage.getItem('app_id');
@@ -20,7 +21,6 @@ function App() {
     if (localStorage.getItem('app_id')) return;
 
     dispatch(createApp(appId));
-    dispatch(getBooks());
   });
 
   return (

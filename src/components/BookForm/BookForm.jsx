@@ -6,11 +6,10 @@ import { addBookToAPI } from '../../redux/books/books';
 const BookForm = () => {
   const dispatch = useDispatch();
 
-  const submitBookToStore = (title, author, category = 'Generic') => {
+  const submitBookToStore = (title, category = 'Generic') => {
     const newBook = {
       id: uuidv4(),
       title,
-      author,
       category,
     };
 
@@ -18,13 +17,13 @@ const BookForm = () => {
   };
 
   const titleRef = useRef('');
-  const authorRef = useRef('');
+  const categoryRef = useRef('');
 
   return (
     <div className="book-form">
       <input type="text" ref={titleRef} placeholder="" />
-      <input type="text" ref={authorRef} placeholder="" />
-      <button type="button" onClick={() => submitBookToStore(titleRef.current.value, authorRef.current.value)}>Add Book</button>
+      <input type="text" ref={categoryRef} placeholder="" />
+      <button type="button" onClick={() => submitBookToStore(titleRef.current.value, categoryRef.current.value)}>Add Book</button>
     </div>
   );
 };

@@ -5,7 +5,6 @@ const appId = localStorage.getItem('app_id');
 
 export const getBooks = () => async (dispatch) => {
   const url = `${www + appId}/books`;
-  console.log('getBooks');
 
   return fetch(url)
     .then((response) => response.json())
@@ -22,7 +21,6 @@ export const getBooks = () => async (dispatch) => {
 
 export const addBookToAPI = (book) => async (dispatch) => {
   const url = `${www + appId}/books`;
-  console.log('addBookToApi');
 
   fetch(url, {
     method: 'POST',
@@ -54,7 +52,6 @@ export const removeBookFromAPI = (id) => async (dispatch) => {
 const books = (state = [], action) => {
   switch (action.type) {
     case UPDATE_BOOKS:
-      console.log(action.books);
       return action.books;
     default:
       return state;

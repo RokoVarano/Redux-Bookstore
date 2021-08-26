@@ -5,14 +5,14 @@ import { removeBookFromAPI } from '../../redux/books/books';
 
 const Book = (props) => {
   const dispatch = useDispatch();
-  const { title, author, id } = props;
+  const { title, category, id } = props;
 
   return (
     <div className="book-widget general" id={id}>
       <div>
         <ul>
+          <li><p className="book-category">{category}</p></li>
           <li><h2 className="book-title">{title}</h2></li>
-          <li><p className="book-author">{author}</p></li>
         </ul>
         <ul>
           <li><button type="button" onClick={() => dispatch(removeBookFromAPI(id))}>Delete</button></li>
@@ -33,7 +33,7 @@ const Book = (props) => {
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
 

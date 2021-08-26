@@ -8,7 +8,7 @@ const BookList = () => {
   const updateBooks = (books) => books.map((book) => (
     <Book
       title={book.title}
-      author={book.author}
+      category={book.category}
       key={book.id}
       id={book.id}
     />
