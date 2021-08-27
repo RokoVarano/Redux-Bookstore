@@ -1,7 +1,62 @@
-.general {
-  display: flex;
-  width: 100%;
-  height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Roboto+Slab:wght@300;600&display=swap');
+@import url('https://pro.fontawesome.com/releases/v5.10.0/css/all.css');
+
+$font-mont: 'Montserrat', sans-serif;
+$font-roboto:'Roboto Slab', serif;
+$color-azure: #0290ff;
+$color-lightblue: #4386bf;
+$color-black: #121212;
+$color-white: #fff;
+$color-bone: #fafafa;
+$color-grey: #888;
+$color-lightgrey: #e8e8e8;
+
+* {
   margin: 0;
   padding: 0;
 }
+
+.general,
+#header,
+main,
+.book-form,
+#books-page,
+#root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+#root {
+  position: absolute;
+  flex-direction: column;
+}
+
+main {
+  background-color: $color-bone;
+  padding: 0 5rem;
+}
+
+button {
+  background-color: $color-azure;
+  color: $color-white;
+  border-radius: 3px;
+  font-family: $font-roboto;
+  white-space: nowrap;
+  width: 12rem;
+}
+
+@import './components/Header/header.scss';
+@import './components/BookForm/bookform.scss';
+@import './components/BookList/booklist.scss';
+@import './components/Book/book.scss';

@@ -28,10 +28,12 @@ function App() {
   return (
     <Router>
       <Header />
-      <Switch>
-        <Route path="/" exact component={BookList} />
-        <Route path="/categories" component={Categories} />
-      </Switch>
+      <main>
+        <Switch>
+          <Route path="/" exact component={BookList} />
+          <Route path="/categories" component={Categories} />
+        </Switch>
+      </main>
     </Router>
   );
 }

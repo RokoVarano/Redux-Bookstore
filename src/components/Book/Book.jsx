@@ -1,30 +1,40 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
 import { removeBookFromAPI } from '../../redux/books/books';
 
 const Book = (props) => {
   const dispatch = useDispatch();
   const { title, category, id } = props;
+  const percent = 60;
 
   return (
     <div className="book-widget general" id={id}>
-      <div>
+      <div className="info-col general">
         <ul>
-          <li><p className="book-category">{category}</p></li>
-          <li><h2 className="book-title">{title}</h2></li>
+          <li><h6 className="book-category">{category}</h6></li>
+          <li><h3 className="book-title">{title}</h3></li>
         </ul>
-        <ul>
-          <li><button type="button" onClick={() => dispatch(removeBookFromAPI(id))}>Delete</button></li>
+        <ul className="handle">
+          <li><h6 type="button">Comments</h6></li>
+          <li><h6 type="button" className="book-remove" onClick={() => dispatch(removeBookFromAPI(id))}>Remove</h6></li>
+          <li><h6 type="button">Edit</h6></li>
         </ul>
       </div>
-      <ul>
-        <li><h2 className="book-percent">0%</h2></li>
-        <li><p>Completed</p></li>
-      </ul>
-      <ul>
-        <li><p className="book-current-chapter">chapter</p></li>
-        <li><h2 className="book-chapter">Chapter 0</h2></li>
+      <div className="percent-col general">
+        <div className="circle-container">
+          <CircularProgressbar value={percent} />
+        </div>
+        <ul className="percent-info general">
+          <li><h3 className="book-percent">{`${percent}%`}</h3></li>
+          <li><h6>Completed</h6></li>
+        </ul>
+      </div>
+      <ul className="chapter-col general">
+        <li><h6 className="book-current-chapter">CURRENT CHAPTER</h6></li>
+        <li><h4 className="book-chapter">Chapter 0</h4></li>
         <li><button type="button">UPDATE PROGRESS</button></li>
       </ul>
     </div>

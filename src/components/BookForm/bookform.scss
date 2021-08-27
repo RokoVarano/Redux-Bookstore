@@ -1,0 +1,37 @@
+.book-form {
+  flex-direction: column;
+  height: 5rem;
+  border-top: 1px $color-lightgrey solid;
+  font-family: $font-mont;
+
+  h3 {
+    align-items: center;
+    color: $color-grey;
+  }
+
+  .inputs {
+    align-self: flex-end;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  input {
+    padding: 0.5rem;
+    border: 1px $color-lightgrey solid;
+    color: $color-grey;
+  }
+
+  .title-input {
+    width: 60%;
+    min-width: 20rem;
+  }
+
+  .category-input {
+    width: 20rem;
+    margin: 0 1rem;
+  }
+
+  button {
+    font-weight: bolder;
+  }
+}

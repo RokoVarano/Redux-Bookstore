@@ -1,0 +1,32 @@
+#header {
+  color: $color-black;
+  background-color: $color-white;
+  height: auto;
+  font-family: $font-mont;
+  padding: 0 5rem;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    height: 5rem;
+    align-items: center;
+    width: 30rem;
+    justify-content: space-between;
+  }
+
+  h1 {
+    color: $color-azure;
+    font-weight: bold;
+  }
+
+  h5 {
+    font-weight: lighter;
+  }
+
+  .user-icon {
+    color: $color-azure;
+    border: 1px $color-lightgrey solid;
+    padding: 0.7rem;
+    border-radius: 50%;
+  }
+}
