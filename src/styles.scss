@@ -3,10 +3,12 @@
 $font-mont: 'Montserrat', sans-serif;
 $font-roboto:'Roboto Slab', serif;
 $color-azure: #0290ff;
+$color-lightblue: #4386bf;
 $color-black: #121212;
 $color-white: #fff;
 $color-bone: #fafafa;
 $color-grey: #888;
+$color-lightgrey: #e8e8e8;
 
 * {
   margin: 0;
@@ -23,7 +25,6 @@ main,
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  font-family: $font-mont;
 }
 
 ul {
@@ -50,9 +51,11 @@ button {
   color: $color-white;
   border-radius: 3px;
   font-family: $font-roboto;
-  font-weight: bolder;
+  white-space: nowrap;
+  width: 12rem;
 }
 
 @import './components/Header/header.scss';
 @import './components/BookForm/bookform.scss';
-// @import './components/BookList/booklist.scss';
+@import './components/BookList/booklist.scss';
+@import './components/Book/book.scss';
