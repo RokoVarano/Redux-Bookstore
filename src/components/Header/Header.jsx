@@ -7,6 +7,7 @@ const Header = () => (
       <Link to="/"><li><h5>Books</h5></li></Link>
       <Link to="/categories"><li><h5>Categories</h5></li></Link>
     </ul>
+    <i className="fas fa-user user-icon" />
   </nav>
 );
 
