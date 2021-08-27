@@ -6,11 +6,14 @@ Book store allows you to have a list of books that you can add or remove
 
 ## Screenshot
 
-coming soon
+![screenshot](./app_screenshot.png)
 
 ## Built With
 
 - React
+- Redux
+- SASS
+- [React Circular progress bar](https://www.npmjs.com/package/react-circular-progressbar)
 
 ## Live Demo
 
@@ -29,12 +32,16 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 - clone the Repo: https://github.com/RokoVarano/redux-bookstore.git
 ### Install
-- 
+
 - In the cloned project folder, run 'npm run start'
 
 ### Usage
 
-- Use the top links to switch between the book lists and the categories page. More functionality coming soon
+- Use the top links to switch between the book lists and the categories page.
+- In the books page, fill the form at the bottom to add a new book
+- In each of the book widgets, you can click the 'remove' button to remove a book
+- App id is generated only once and saved in local storage for testing convinience. 
+If you need to reset the memory and generate a new ID, delete app_id from localStorage.
 
 ### Run tests
 
